@@ -66,7 +66,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             playBtn.setOnClickListener {
-                val timerTime = timeEditText.text.toString().toLong()
+                val timerTime : Long = if(timeEditText.text.toString().isNotEmpty())
+                    timeEditText.text.toString().toLong() else 0L
                 notiTimer.play(timerTime)
             }
 
